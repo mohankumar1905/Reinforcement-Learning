@@ -1,0 +1,33 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 1 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: pgtf.py
+--------------------------------------------------------------------------------
+pgtf.py:79:11: ERROR: Using member tf.contrib.distributions.Normal in deprecated module tf.contrib. tf.contrib.distributions.Normal cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+================================================================================
+Detailed log follows:
+
+================================================================================
+--------------------------------------------------------------------------------
+Processing file 'pgtf.py'
+ outputting to 'pgtf_v2.py'
+--------------------------------------------------------------------------------
+
+25:10: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+62:13: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+63:19: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+64:22: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+79:11: ERROR: Using member tf.contrib.distributions.Normal in deprecated module tf.contrib. tf.contrib.distributions.Normal cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+83:12: INFO: Added keywords to args of function 'tf.reduce_sum'
+84:20: INFO: Renamed 'tf.train.AdamOptimizer' to 'tf.compat.v1.train.AdamOptimizer'
+133:13: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+134:13: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+143:11: INFO: Added keywords to args of function 'tf.reduce_sum'
+145:20: INFO: Renamed 'tf.train.AdamOptimizer' to 'tf.compat.v1.train.AdamOptimizer'
+197:9: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+198:12: INFO: Renamed 'tf.InteractiveSession' to 'tf.compat.v1.InteractiveSession'
+--------------------------------------------------------------------------------
+

@@ -1,0 +1,31 @@
+To convert into v2 script execute below command
+tf_upgrade_v2 --infile policy_gradient_tf_hill_climbing.py --outfile policy_gradient_tf_hill_climbing_v2.py
+
+
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 1 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: policy_gradient_tf_hill_climbing.py
+--------------------------------------------------------------------------------
+policy_gradient_tf_hill_climbing.py:100:11: ERROR: Using member tf.contrib.distributions.Normal in deprecated module tf.contrib. tf.contrib.distributions.Normal cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+================================================================================
+Detailed log follows:
+
+================================================================================
+--------------------------------------------------------------------------------
+Processing file 'policy_gradient_tf_hill_climbing.py'
+ outputting to 'policy_gradient_tf_hill_climbing_v2.py'
+--------------------------------------------------------------------------------
+
+26:27: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+85:13: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+86:19: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+87:22: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+100:11: ERROR: Using member tf.contrib.distributions.Normal in deprecated module tf.contrib. tf.contrib.distributions.Normal cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+108:14: INFO: Renamed 'tf.variables_initializer' to 'tf.compat.v1.variables_initializer'
+234:12: INFO: Renamed 'tf.InteractiveSession' to 'tf.compat.v1.InteractiveSession'
+--------------------------------------------------------------------------------
+

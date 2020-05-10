@@ -13,17 +13,17 @@ from sklearn.kernel_approximation import RBFSampler
 from sklearn.linear_model import SGDRegressor
 
 class FeatureTransformer:
-    def __init__(self, env):
+    def __init__(self, env, n_components=500):
         observation_examples = np.array([env.observation_space.sample() for x in range(10000)])
         scaler = StandardScaler()
         scaler.fit(observation_examples)
         #converting states into a featurized representations
         #Number of components is number of exemplars
         featurizer = FeatureUnion([
-            ("rbf1", RBFSampler(gamma=5.0, n_components=500)),
-            ("rbf2", RBFSampler(gamma=2.0, n_components=500)),
-            ("rbf3", RBFSampler(gamma=1.0, n_components=500)),
-            ("rbf4", RBFSampler(gamma=0.5, n_components=500))
+            ("rbf1", RBFSampler(gamma=5.0, n_components=n_components)),
+            ("rbf2", RBFSampler(gamma=2.0, n_components=n_components)),
+            ("rbf3", RBFSampler(gamma=1.0, n_components=n_components)),
+            ("rbf4", RBFSampler(gamma=0.5, n_components=n_components))
         ])
         featurizer.fit(scaler.transform(observation_examples))
         self.dimensions = featurizer.transform(scaler.transform(observation_examples)).shape[1]
